@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  encoding: unicode
+  host: localhost
+  username:
+  password:
+
+development:
+  <<: *default
+  database: service-b_development
+
+test:
+  <<: *default
+  database: service-b_test
+
+production:
+  <<: *default
+  database: service-b_production
