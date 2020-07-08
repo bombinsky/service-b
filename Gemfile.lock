@@ -140,6 +140,8 @@ GEM
     octokit (4.18.0)
       faraday (>= 0.9)
       sawyer (~> 0.8.0, >= 0.5.3)
+    panoramic (0.0.6)
+      rails (>= 3.0.7)
     parallel (1.19.2)
     parser (2.7.1.4)
       ast (~> 2.4.1)
@@ -307,6 +309,7 @@ DEPENDENCIES
   database_cleaner-active_record
   factory_bot_rails
   listen (~> 3.2)
+  panoramic
   pg (>= 0.18, < 2.0)
   pronto
   pronto-brakeman
