@@ -10,7 +10,8 @@ class SendEmailTemplate
   end
 
   def call
-    ApplicationMailer.send_email(from: from, to: to, headers: headers, subject: subject, body: body).deliver
+    body
+    #ApplicationMailer.send_email(from: from, to: to, headers: headers, subject: subject, body: body).deliver
   end
 
   private
@@ -22,10 +23,10 @@ class SendEmailTemplate
   end
 
   def subject
-    Liquid::Template.parse(email_template.subject).render(template_payload)
+    Liquid::Template.parse(email_template.subject).render!(template_payload, strict_variables: true)
   end
 
   def body
-    Liquid::Template.parse(email_template.body).render(template_payload)
+    Liquid::Template.parse(email_template.body).render!(template_payload, strict_variables: true)
   end
 end
