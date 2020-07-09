@@ -21,11 +21,11 @@ shared_context 'with email template for external urls request results' do
 
   let(:delivery_params) do
     {
-        from: 'from@email.com',
-        to: 'to@email.com',
-        headers: { 'Reply-To': 'reply-to@email.com' }.stringify_keys,
-        template_name: template_name,
-        template_payload: template_payload.stringify_keys
+      from: 'from@email.com',
+      to: 'to@email.com',
+      headers: { 'Reply-To': 'reply-to@email.com' }.stringify_keys,
+      template_name: template_name,
+      template_payload: template_payload.stringify_keys
     }
   end
 end

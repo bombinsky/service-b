@@ -10,8 +10,7 @@ class SendEmailTemplate
   end
 
   def call
-    body
-    #ApplicationMailer.send_email(from: from, to: to, headers: headers, subject: subject, body: body).deliver
+    ApplicationMailer.send_email(from: from, to: to, headers: headers, subject: subject, body: body).deliver
   end
 
   private
