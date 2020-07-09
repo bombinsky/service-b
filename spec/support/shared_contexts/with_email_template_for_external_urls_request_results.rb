@@ -12,9 +12,9 @@ shared_context 'with email template for external urls request results' do
       request_created_at: '2020-07-05 13:45:34',
       request_updated_at: '2020-07-05 13:55:49',
       urls: [
-        'https://wp.pl',
-        'https://amazon.com',
-        'https://youtube.com'
+        { page_title: 'Page title 1', url: 'https://wp.pl' },
+        { page_title: 'Page title 2', url: 'https://amazon.com' },
+        { page_title: 'Page title 3', url: 'https://youtube.com' }
       ]
     }
   end
@@ -25,7 +25,7 @@ shared_context 'with email template for external urls request results' do
       to: 'to@email.com',
       headers: { 'Reply-To': 'reply-to@email.com' }.stringify_keys,
       template_name: template_name,
-      template_payload: template_payload.stringify_keys
+      template_payload: template_payload.deep_stringify_keys
     }
   end
 end

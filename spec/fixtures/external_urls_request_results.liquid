@@ -1,0 +1,73 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body style="margin:0!important;padding:0!important;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;background-color:#ffffff;"
+
+    <table border="0" cellpadding="0" cellspacing="0" width="540" align="center">
+
+      <tr>
+        <td align="left" style="padding-bottom: 24px" valign="top">
+          <p style="mso-line-height-rule: exactly;padding: 0;margin: 0;font-size: 16px;line-height: 24px">
+
+            Welcome {{nickname}},
+
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="left" style="padding-bottom: 24px" valign="top">
+          <p style="mso-line-height-rule: exactly;padding: 0;margin: 0;font-size: 16px;line-height: 24px">
+
+            We've just finished processing your's request for external urls found in your's Twitter home line.
+            Below you will find a details of the request and information about desired results.
+
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="left" style="padding-bottom: 24px" valign="top">
+          <p style="mso-line-height-rule: exactly;padding: 0;margin: 0;font-size: 16px;line-height: 24px">
+
+            Request id : {{request_id}}
+            Created at : {{request_created_at}}
+            Completed at : {{request_updated_at}}
+            Examined time range since : {{request_start_time}}
+            Examined time range up to : {{request_end_time}}
+
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="left" style="padding-bottom: 24px" valign="top">
+          <p style="mso-line-height-rule: exactly;padding: 0;margin: 0;font-size: 16px;line-height: 24px">
+
+            {% unless urls == empty %}
+              There is a list of external urls found in your Twitter home line.
+              {% for url in urls %}
+                <p>{{url.page_title}}<br />{{url.url}}</p>
+              {% endfor %}
+            {% endunless %}
+
+            {% if urls == empty %}
+              It looks like this time there were no external urls in your Twitter home line.
+            {% endif %}
+
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="left" style="padding-bottom: 24px" valign="top">
+          <p style="mso-line-height-rule: exactly;padding: 0;margin: 0;font-size: 16px;line-height: 24px">
+            Best Regards,
+            Service A Team :)
+          </p>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

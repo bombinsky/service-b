@@ -15,7 +15,7 @@ describe SendEmailTemplate do
       let(:delivery) { double }
 
       let(:expected_body) do
-        Liquid::Template.parse(email_template.body).render!(template_payload.stringify_keys, strict_variables: true)
+        Liquid::Template.parse(email_template.body).render!(template_payload.deep_stringify_keys, strict_variables: true)
       end
 
       let(:action_mailer_params) do

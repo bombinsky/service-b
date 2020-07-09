@@ -5,6 +5,6 @@ class ApplicationMailer < ActionMailer::Base
   def send_email(from:, to:, headers:, subject:, body:)
     headers(headers)
 
-    mail(to: to, from: from, subject: subject, body: body)
+    mail(to: to, from: from, subject: subject, body: body, content_type: 'text/html')
   end
 end

@@ -22,32 +22,6 @@ class AddExternalUrlsRequestResultsTemplate < ActiveRecord::Migration[6.0]
   end
 
   def body
-    <<-BODY
-      Welcome {{nickname}},
-
-      We've just finished processing your's request for external urls found in your's Twitter home line.
-      Below you will find a details of the request and information about desired results.
-
-      Request id : {{request_id}}
-      Created at : {{request_created_at}}
-      Completed at : {{request_updated_at}}
-
-      Examined time range since : {{request_start_time}}
-      Examined time range up to : {{request_end_time}}
-
-      {% unless urls == empty %}
-        There is a list of external urls found in your Twitter home line.
-        {% for url in urls %}
-          {{url}}
-        {% endfor %}
-      {% endunless %}
-
-      {% if urls == empty %}
-        It looks like this time there were no external urls in your Twitter home line.
-      {% endif %}
-
-      Best Regards,
-      Service A Team :)
-    BODY
+    File.open(Rails.root + 'spec/fixtures/external_urls_request_results.liquid').read
   end
 end
