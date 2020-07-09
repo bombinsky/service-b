@@ -8,10 +8,8 @@
 
       <tr>
         <td align="left" style="padding-bottom: 24px" valign="top">
-          <p style="mso-line-height-rule: exactly;padding: 0;margin: 0;font-size: 16px;line-height: 24px">
-
+          <p style="mso-line-height-rule: exactly;padding: 0;margin: 0;font-size: 24px;font-weight: 700;line-height: 36px">
             Welcome {{nickname}},
-
           </p>
         </td>
       </tr>
@@ -19,10 +17,16 @@
       <tr>
         <td align="left" style="padding-bottom: 24px" valign="top">
           <p style="mso-line-height-rule: exactly;padding: 0;margin: 0;font-size: 16px;line-height: 24px">
-
-            We've just finished processing your's request for external urls found in your's Twitter home line.
+            We've just finished processing the request for external urls found in your Twitter home line.<br/>
             Below you will find a details of the request and information about desired results.
+          </p>
+        </td>
+      </tr>
 
+      <tr>
+        <td align="left" style="padding-bottom: 10px" valign="top">
+          <p style="mso-line-height-rule: exactly;padding: 0;margin: 0;font-size: 20px;font-weight: 700;line-height: 36px">
+            Request details
           </p>
         </td>
       </tr>
@@ -30,40 +34,42 @@
       <tr>
         <td align="left" style="padding-bottom: 24px" valign="top">
           <p style="mso-line-height-rule: exactly;padding: 0;margin: 0;font-size: 16px;line-height: 24px">
-
-            Request id : {{request_id}}
-            Created at : {{request_created_at}}
-            Completed at : {{request_updated_at}}
-            Examined time range since : {{request_start_time}}
+            Request id : {{request_id}}<br />
+            Created at : {{request_created_at}}<br />
+            Completed at : {{request_updated_at}}<br />
+            Examined time range since : {{request_start_time}}<br />
             Examined time range up to : {{request_end_time}}
-
           </p>
         </td>
       </tr>
 
       <tr>
-        <td align="left" style="padding-bottom: 24px" valign="top">
-          <p style="mso-line-height-rule: exactly;padding: 0;margin: 0;font-size: 16px;line-height: 24px">
-
+        <td align="left" style="padding-bottom: 10px" valign="top">
+          <p style="mso-line-height-rule: exactly;padding: 0;margin: 0;font-size: 20px;font-weight: 700;line-height: 36px">
             {% unless urls == empty %}
-              There is a list of external urls found in your Twitter home line.
-              {% for url in urls %}
-                <p>{{url.page_title}}<br />{{url.url}}</p>
-              {% endfor %}
+              List of urls to external resources
+            {% else %}
+              It looks like this time we found nothing
             {% endunless %}
-
-            {% if urls == empty %}
-              It looks like this time there were no external urls in your Twitter home line.
-            {% endif %}
-
           </p>
+          {% unless urls == empty %}
+            {% for url in urls %}
+              <tr>
+                <td align="left" style="padding-bottom: 24px" valign="top">
+                  <p style="mso-line-height-rule: exactly;padding: 0;margin: 0;font-size: 16px;line-height: 24px">
+                    {{url.page_title}}<br />{{url.url}}
+                  </p>
+                </td>
+              </tr>
+            {% endfor %}
+          {% endunless %}
         </td>
       </tr>
 
       <tr>
         <td align="left" style="padding-bottom: 24px" valign="top">
           <p style="mso-line-height-rule: exactly;padding: 0;margin: 0;font-size: 16px;line-height: 24px">
-            Best Regards,
+            Best Regards,<br />
             Service A Team :)
           </p>
         </td>

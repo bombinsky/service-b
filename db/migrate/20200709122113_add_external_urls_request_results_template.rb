@@ -18,7 +18,7 @@ class AddExternalUrlsRequestResultsTemplate < ActiveRecord::Migration[6.0]
   private
 
   def subject
-    "External urls in your's Twitter home line between {{request_start_time}} and {{request_end_time}}"
+    "External urls in your Twitter home line between {{request_start_time}} and {{request_end_time}}"
   end
 
   def body
