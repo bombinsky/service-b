@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Controller responsible for creatingTemplateEmailDelivery (Just sending email)
 class TemplateEmailDeliveriesController < ApplicationController
   def create
     SendEmailTemplate.new(created_email_params.to_h.symbolize_keys).call
@@ -19,6 +20,7 @@ class TemplateEmailDeliveriesController < ApplicationController
   end
 
   def permitted_params
-    @permitted_params ||= params.require(:template_email).permit(:from, :to, :template_name, template_payload: {}, headers: {})
+    @permitted_params ||= params.require(:template_email)
+                                .permit(:from, :to, :template_name, template_payload: {}, headers: {})
   end
 end

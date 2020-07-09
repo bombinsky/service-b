@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Treasury
   class << self
     def method_missing(m, *args, &block)
