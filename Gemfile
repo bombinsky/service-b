@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
+# dotenv-rails
+gem 'dotenv-rails', groups: [:development, :test]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use postgresql as the database for Active Record
@@ -25,9 +27,19 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
+# Liquid
+gem 'liquid'
+
+# responders
+gem 'responders'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Factory Bot Rails
+  gem 'factory_bot_rails'
+  # Rspec rails
+  gem 'rspec-rails', '~> 4.0.0'
 end
 
 group :development do
@@ -35,6 +47,21 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  gem 'pronto'
+  gem 'pronto-rubocop', require: false
+  gem 'pronto-flay', require: false
+  gem 'pronto-rails_best_practices', require: false
+  gem 'pronto-reek', require: false
+  gem 'pronto-brakeman', require: false
+  gem 'rubocop-rspec', require: false
+end
+
+group :test do
+  gem 'shoulda-matchers'
+  gem 'simplecov', require: false
+  gem 'database_cleaner-active_record'
+  gem 'rails-controller-testing'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

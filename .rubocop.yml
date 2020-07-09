@@ -1,0 +1,98 @@
+require:
+  - rubocop-rspec
+
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - db/migrate/*
+
+Style/BlockComments:
+  Exclude:
+    - spec/spec_helper.rb
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+
+RSpec/NestedGroups:
+  Max: 4
+
+Metrics/ParameterLists:
+  Max: 6
+
+RSpec/DescribeClass:
+  Exclude:
+    - spec/requests/**/*
+
+RSpec/EmptyLineAfterSubject:
+  Exclude:
+    - spec/factories/email_templates.rb
+
+RSpec/MultipleExpectations:
+  Exclude:
+    - spec/features/**/*
+
+RSpec/ExampleLength:
+  Exclude:
+    - spec/features/**/*
+
+Style/MethodMissingSuper:
+  Exclude:
+    - lib/treasury.rb
+    - lib/settings.rb
+
+Style/MissingRespondToMissing:
+  Exclude:
+    - lib/treasury.rb
+    - lib/settings.rb
+
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+
+Lint/MixedRegexpCaptureTypes:
+  Enabled: true
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Style/ExponentialNotation:
+  Enabled: true
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Style/RedundantFetchBlock:
+  Enabled: true
+
+Style/RedundantRegexpCharacterClass:
+  Enabled: true
+
+Style/RedundantRegexpEscape:
+  Enabled: true
+
+Style/SlicingWithRange:
+  Enabled: true
+
+Style/AccessorGrouping:
+  Enabled: true
+
+Style/BisectedAttrAccessor:
+  Enabled: true
+
+Style/RedundantAssignment:
+  Enabled: true

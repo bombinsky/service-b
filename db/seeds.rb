@@ -1,7 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# frozen_string_literal: true
+
+EmailTemplate.find_or_create_by!(
+  name: 'external_urls_request_results',
+  subject: 'External urls in your Twitter home line between {{request_start_time}} and {{request_end_time}}',
+  body: File.open(Rails.root + 'spec/fixtures/external_urls_request_results.liquid').read
+)

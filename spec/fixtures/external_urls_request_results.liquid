@@ -1,0 +1,79 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body style="margin:0!important;padding:0!important;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;background-color:#ffffff;"
+
+    <table border="0" cellpadding="0" cellspacing="0" width="540" align="center">
+
+      <tr>
+        <td align="left" style="padding-bottom: 24px" valign="top">
+          <p style="mso-line-height-rule: exactly;padding: 0;margin: 0;font-size: 24px;font-weight: 700;line-height: 36px">
+            Welcome {{nickname}},
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="left" style="padding-bottom: 24px" valign="top">
+          <p style="mso-line-height-rule: exactly;padding: 0;margin: 0;font-size: 16px;line-height: 24px">
+            We've just finished processing the request for external urls found in your Twitter home line.<br/>
+            Below you will find a details of the request and information about desired results.
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="left" style="padding-bottom: 10px" valign="top">
+          <p style="mso-line-height-rule: exactly;padding: 0;margin: 0;font-size: 20px;font-weight: 700;line-height: 36px">
+            Request details
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="left" style="padding-bottom: 24px" valign="top">
+          <p style="mso-line-height-rule: exactly;padding: 0;margin: 0;font-size: 16px;line-height: 24px">
+            Request id : {{request_id}}<br />
+            Created at : {{request_created_at}}<br />
+            Completed at : {{request_updated_at}}<br />
+            Examined time range since : {{request_start_time}}<br />
+            Examined time range up to : {{request_end_time}}
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="left" style="padding-bottom: 10px" valign="top">
+          <p style="mso-line-height-rule: exactly;padding: 0;margin: 0;font-size: 20px;font-weight: 700;line-height: 36px">
+            {% unless urls == empty %}
+              List of urls to external resources
+            {% else %}
+              It looks like this time we found nothing
+            {% endunless %}
+          </p>
+          {% unless urls == empty %}
+            {% for url in urls %}
+              <tr>
+                <td align="left" style="padding-bottom: 24px" valign="top">
+                  <p style="mso-line-height-rule: exactly;padding: 0;margin: 0;font-size: 16px;line-height: 24px">
+                    {{url.page_title}}<br />{{url.url}}
+                  </p>
+                </td>
+              </tr>
+            {% endfor %}
+          {% endunless %}
+        </td>
+      </tr>
+
+      <tr>
+        <td align="left" style="padding-bottom: 24px" valign="top">
+          <p style="mso-line-height-rule: exactly;padding: 0;margin: 0;font-size: 16px;line-height: 24px">
+            Best Regards,<br />
+            Service A Team :)
+          </p>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
