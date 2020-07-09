@@ -1,5 +1,6 @@
 require_relative 'boot'
 require_relative '../lib/treasury'
+require_relative '../lib/settings'
 
 require "rails"
 # Pick the frameworks you want:
