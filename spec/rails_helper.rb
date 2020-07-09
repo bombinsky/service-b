@@ -72,4 +72,5 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   config.include BasicAuthHelper, type: :controller
+  config.include ClientApiHelper, type: :request
 end
