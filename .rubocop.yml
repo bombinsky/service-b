@@ -6,6 +6,10 @@ AllCops:
     - db/schema.rb
     - db/migrate/*
 
+Style/BlockComments:
+  Exclude:
+    - spec/spec_helper.rb
+
 Metrics/BlockLength:
   Exclude:
     - spec/**/*
