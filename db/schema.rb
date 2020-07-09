@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2020_07_08_152028) do
   create_table "email_templates", force: :cascade do |t|
     t.string "name", null: false
     t.string "subject", null: false
-    t.text "required_payload", default: [], null: false, array: true
     t.text "body", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

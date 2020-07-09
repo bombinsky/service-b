@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe EmailTemplate do
 subject(:object) { build :email_template }
 

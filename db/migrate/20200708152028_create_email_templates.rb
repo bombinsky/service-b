@@ -3,7 +3,6 @@ class CreateEmailTemplates < ActiveRecord::Migration[6.0]
     create_table :email_templates do |t|
       t.string :name, null: false
       t.string :subject, null: false
-      t.text :required_payload, default: [], null: false, array: true
       t.text :body, null: false
 
       t.timestamps
