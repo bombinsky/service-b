@@ -43,7 +43,7 @@ class AddExternalUrlsRequestResultsTemplate < ActiveRecord::Migration[6.0]
       {% endunless %}
 
       {% if urls == empty %}
-        It looks like this time there were no external urls in your Twitter home line. 
+        It looks like this time there were no external urls in your Twitter home line.
       {% endif %}
 
       Best Regards,

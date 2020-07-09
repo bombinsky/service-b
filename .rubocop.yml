@@ -1,9 +1,10 @@
 require:
   - rubocop-rspec
 
-Style/StringLiterals:
+AllCops:
   Exclude:
     - db/schema.rb
+    - db/migrate/*
 
 Metrics/BlockLength:
   Exclude:
@@ -30,6 +31,16 @@ RSpec/MultipleExpectations:
 RSpec/ExampleLength:
   Exclude:
     - spec/features/**/*
+
+Style/MethodMissingSuper:
+  Exclude:
+    - lib/treasury.rb
+    - lib/settings.rb
+
+Style/MissingRespondToMissing:
+  Exclude:
+    - lib/treasury.rb
+    - lib/settings.rb
 
 Layout/EmptyLinesAroundAttributeAccessor:
   Enabled: true

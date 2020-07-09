@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Service object responsible for preparing subject and body based on template and template_payload
 class SendEmailTemplate
   def initialize(from:, to:, headers:, template_name:, template_payload:)
     @from = from
