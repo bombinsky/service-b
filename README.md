@@ -29,7 +29,7 @@ SMTP_PASSWORD=smtp_password
 
    ``` cp config/database.yml.example cp config/database.yml ```
 
-3. Setup database with 
+3. Setup database with
 
     ``` rails db:setup ```
 
@@ -66,16 +66,16 @@ SMTP_PASSWORD=smtp_password
 
 #### Final email
 <p>
-  <img src="readme_images/email_part_1.png" width="600" height="200">
-  <img src="readme_images/email_part_2.png" width="600" height="200">
+    <img src="readme_images/email_part_1.png" width="600" height="400"><br />
+  <img src="readme_images/email_part_2.png" width="600" height="220">
 </p>
 
 #### Code coverage report
 <p>
-  <img src="readme_images/code_coverage.png" width="600" height="350">
+  <img src="readme_images/code_coverage.png" width="600" height="300">
 </p>
 
 #### Rspec output
 <p>
-  <img src="readme_images/rspec_output.png" width=600" height="100">
+  <img src="readme_images/rspec_output.png" width=380" height="90">
 </p>
