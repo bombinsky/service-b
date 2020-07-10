@@ -19,6 +19,35 @@ SMTP_USERNAME=smtp_username
 SMTP_PASSWORD=smtp_password
 ```
 
+Example of the request
+
+`POST /template_email_deliveries`
+
+```json
+{
+  "template_email": {
+    "from": "bombinsky@gmail.com",
+    "to": "bombinsky@gmail.com",
+    "headers": { "Reply-To": "reply-to@email.com" },
+    "template_name": "external_urls_request_results",
+    "template_payload": {
+      "nickname": "Bombinsky",
+      "request_id": "1234",
+      "request_start_time": "2020-07-01 10:45",
+      "request_end_time": "2020-07-04 10:45",
+      "request_created_at": "2020-07-05 13:45:34",
+      "request_updated_at": "2020-07-05 13:55:49",
+      "urls": [
+        { "page_title": "Page title 1", "url": "https://wp.pl" },
+        { "page_title": "Page title 2", "url": "https://amazon.com" },
+        { "page_title": "Page title 3", "url": "https://youtube.com" }
+      ]
+    }
+  }
+}
+```
+
+
 ## Simple running instruction until docker files will be ready
 
 1. Set all required environmental variables the way you prefer. For example you can copy then edit .env using .env.example
@@ -66,8 +95,7 @@ SMTP_PASSWORD=smtp_password
 
 #### Final email
 <p>
-    <img src="readme_images/email_part_1.png" width="600" height="400"><br />
-  <img src="readme_images/email_part_2.png" width="600" height="220">
+    <img src="readme_images/email.png" width="750" height="900">
 </p>
 
 #### Code coverage report
